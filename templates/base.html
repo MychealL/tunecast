@@ -16,17 +16,16 @@
     <link href="{{ url_for('static', filename='css/custom.css') }}" rel="stylesheet">
 </head>
 
+
+
 <body>
     <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-top">
       <a class="navbar-brand" href="#">Tunecast</a>
     </nav>
 
     <div class="container">
-      <audio controls>
-          <source src="{{ url_for('static', filename='music/allegro.mp3') }}" type="audio/mpeg">
-        Your browser does not support the audio element.
-        </audio>
-
+        {% block main %}
+        {% endblock %}
     </div><!-- /.container -->
 
 
