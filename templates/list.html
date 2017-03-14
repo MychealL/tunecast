@@ -3,12 +3,16 @@
 
 
 {% block main %}
- <audio controls>
-          <source src="{{ url_for('static', filename='music/allegro.mp3') }}" type="audio/mpeg">
-        Your browser does not support the audio element.
-</audio>
+{% for song in range(music_files_number) %}
+    <p> <a href="javascript:void(0);" onclick="playSong( '{{music_files[song] }}' )"> {{song+1}} {{ music_files[song] }}</a> </p>
+{% endfor %}
 
-<button href="#/something" class="btn">Something</button>
+<div class="container">
+     <audio controls autoplay>
+
+     </audio>
+</div>
+
  <nav class="navbar navbar-inverse navbar-fixed-bottom">
         <div class="container-fluid">
             <ul class="nav navbar-nav">
@@ -17,5 +21,11 @@
                 <li class="active"><a href="/list">List</a></li>
             </ul>
         </div>
-    </nav>
+ </nav>
+
+<script type="text/javascript">
+    function playSong(song){
+        $('audio').attr('src', '/static/music/'+song);
+    }
+</script>
 {% endblock %}
