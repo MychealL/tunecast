@@ -3,6 +3,39 @@
 
 
 {% block main %}
+
+<div class="panel-group">
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a href=javascript:void(0);" onclick="playSong('{{music_files[0] }}')">Sunny</a>
+        </div>
+        <div class="panel-body">
+            <!--audio controls>
+                <source src="../static/music/birds Flying High.mp3" type="audio/mp3">
+            </audio-->
+            {% include 'play.html' %}
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a href=javascript:void(0);" onclick="playSong('{{music_files[1] }}')">Rain</a>
+        </div>
+        <div class="panel-body">
+            {% include 'play.html' %}
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a href=javascript:void(0);" onclick="playSong('{{music_files[2] }}')">Snow</a>
+        </div>
+        <div class="panel-body">
+            {% include 'play.html' %}
+        </div>
+    </div>
+
+</div>
+
  <nav class="navbar navbar-inverse navbar-fixed-bottom">
         <div class="container-fluid">
             <ul class="nav navbar-nav">
@@ -12,6 +45,10 @@
             </ul>
         </div>
  </nav>
-
+<script type="text/javascript">
+    function playSong(song){
+        $('audio').attr('src', '/static/music/'+song);
+    }
+</script>
 {% endblock %}
 
