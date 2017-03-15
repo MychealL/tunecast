@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+
+{% block main %}
+
+
+<nav class="navbar navbar-fixed-bottom navbar-inverse bg-primary">
+    <div class="container">
+        <ul class="nav nav-pills nav-justified">
+            <li role="presentation">
+                <a href="/">
+                    <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+                    Home
+                </a>
+            </li>
+            <li role="presentation" class="active">
+                <a href="/settings">
+                    <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                    Settings
+                </a>
+            </li>
+            <li role="presentation">
+                <a href="/list">
+                    <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
+                    List
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+{% endblock %}
