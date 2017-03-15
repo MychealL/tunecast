@@ -1,30 +1,46 @@
 {% extends 'base.html' %}
 
 
-
 {% block main %}
 {% for song in range(music_files_number) %}
-    <p> <a href="javascript:void(0);" onclick="playSong( '{{music_files[song] }}' )"> {{song+1}} {{ music_files[song] }}</a> </p>
+<p><a href="javascript:void(0);" onclick="playSong( '{{music_files[song] }}' )"> {{song+1}} {{ music_files[song] }}</a>
+</p>
 {% endfor %}
 
 <div class="container">
-     <!--audio controls autoplay></audio-->
+    <!--audio controls autoplay></audio-->
     {% include 'play.html' %}
 </div>
 
- <nav class="navbar navbar-inverse navbar-fixed-bottom">
-        <div class="container-fluid">
-            <ul class="nav navbar-nav">
-                <li><a href="/">Home</a></li>
-                <li><a href="/settings">Settings</a></li>
-                <li class="active"><a href="/list">List</a></li>
-            </ul>
-        </div>
- </nav>
+<nav class="navbar navbar-fixed-bottom navbar-inverse bg-primary">
+    <div class="container">
+        <ul class="nav nav-pills nav-justified">
+            <li role="presentation">
+                <a href="/">
+                    <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+                    Home
+                </a>
+            </li>
+            <li role="presentation">
+                <a href="/settings">
+                    <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                    Settings
+                </a>
+            </li>
+            <li role="presentation" class="active">
+                <a href="/list">
+                    <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
+                    List
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
 
 <script type="text/javascript">
     function playSong(song){
         $('audio').attr('src', '/static/music/'+song);
     }
+
 </script>
 {% endblock %}

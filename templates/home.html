@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 
 
-
 {% block main %}
 
 <div class="panel-group">
@@ -11,9 +10,6 @@
             <a href=javascript:void(0);" onclick="playSong('{{music_files[0] }}')">Sunny</a>
         </div>
         <div class="panel-body">
-            <!--audio controls>
-                <source src="../static/music/birds Flying High.mp3" type="audio/mp3">
-            </audio-->
             {% include 'play.html' %}
         </div>
     </div>
@@ -35,20 +31,35 @@
     </div>
 
 </div>
-
- <nav class="navbar navbar-inverse navbar-fixed-bottom">
-        <div class="container-fluid">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="/">Home</a></li>
-                <li><a href="/settings">Settings</a></li>
-                <li><a href="/list">List</a></li>
-            </ul>
-        </div>
- </nav>
+<nav class="navbar navbar-fixed-bottom navbar-inverse bg-primary">
+    <div class="container">
+        <ul class="nav nav-pills nav-justified">
+            <li role="presentation" class="active">
+                <a href="/">
+                    <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+                    Home
+                </a>
+            </li>
+            <li role="presentation">
+                <a href="/settings">
+                    <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                    Settings
+                </a>
+            </li>
+            <li role="presentation">
+                <a href="/list">
+                    <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
+                    List
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
 <script type="text/javascript">
     function playSong(song){
         $('audio').attr('src', '/static/music/'+song);
     }
+
 </script>
 {% endblock %}
 
