@@ -18,11 +18,31 @@ app = Flask(__name__)
 @app.route("/")
 def home():
     return render_template('home.html',
-                           title='home',
+                           title='Sun',
                            playlist=playlist,
-                           current=current,
+                           current=0,
                            key=key,
-                           image_dir=image_dir)
+                           image_dir='static/images/sun/sun_tunecast.jpg')
+
+
+@app.route("/home_two")
+def home_two():
+    return render_template('home_two.html',
+                           title='Rain',
+                           current=1,
+                           playlist=playlist,
+                           key='rain',
+                           image_dir='static/images/rain/rain_tunecast.jpg')
+
+
+@app.route("/home_three")
+def home_three():
+    return render_template('home_three.html',
+                           title='Snow',
+                           current=2,
+                           playlist=playlist,
+                           key='snow',
+                           image_dir='static/images/snow/snow_tunecast.jpg')
 
 
 @app.route("/list")
