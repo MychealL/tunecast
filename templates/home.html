@@ -1,49 +1,20 @@
 {% extends 'base.html' %}
 
 
+
 {% block main %}
-
-<div class="panel-group">
-
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <a href=javascript:void(0);" onclick="playSong('{{music_files[0] }}')">Sunny</a>
-        </div>
-        <div class="panel-body">
-            {% include 'play.html' %}
-        </div>
-    </div>
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <a href=javascript:void(0);" onclick="playSong('{{music_files[1] }}')">Rain</a>
-        </div>
-        <div class="panel-body">
-            {% include 'play.html' %}
-        </div>
-    </div>
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <a href=javascript:void(0);" onclick="playSong('{{music_files[2] }}')">Snow</a>
-        </div>
-        <div class="panel-body">
-            {% include 'play.html' %}
-        </div>
-    </div>
-
+<div class="container text-center">
+    {% include 'card.html' %}
 </div>
+
+
 <nav class="navbar navbar-fixed-bottom navbar-inverse bg-primary">
-    <div class="container">
-        <ul class="nav nav-pills nav-justified">
+    <div class="container text-center">
+        <ul class="nav nav-pills" style="display: inline-block;">
             <li role="presentation" class="active">
-                <a href="/">
-                    <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
-                    Home
-                </a>
-            </li>
-            <li role="presentation">
-                <a href="/settings">
-                    <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
-                    Settings
+                <a href="javascript:void(0);" onclick="changePlaylist()" id="change">
+                    <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
+                    Refresh
                 </a>
             </li>
             <li role="presentation">
@@ -52,13 +23,17 @@
                     List
                 </a>
             </li>
+            <li role="presentation">
+                <a href="/settings">
+                    <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                    Settings
+                </a>
+            </li>
+
         </ul>
     </div>
 </nav>
 <script type="text/javascript">
-    function playSong(song){
-        $('audio').attr('src', '/static/music/'+song);
-    }
 
 </script>
 {% endblock %}

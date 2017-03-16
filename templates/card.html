@@ -1,0 +1,23 @@
+{% block card %}
+
+<div class="card" style="width: 20rem;">
+  <img class="card-img-top rounded mx-auto d-block" style="width: 50%; height: 50%;" src="static/images/{{key}}/{{key}}_tunecast.jpg" alt="Card image cap">
+  <div class="card-block">
+      <h4 class="card-title" id="name"> {{key}} </h4>
+  </div>
+    <ul class="list-group list-group-flush">
+        {% for song in range(playlist[current]|length) %}
+            <li class="list-group-item"><a href="javascript:void(0);" onclick="playSong( '{{key}}/'+'{{ playlist[current][song] }}' )"> {{song+1}}) {{ playlist[current][song] }}</a></li>
+        {% endfor %}
+    </ul>
+    {% include 'play.html' %}
+</div>
+
+<script type="text/javascript">
+    function playSong(song){
+        $('audio').attr('src', '/static/music/'+song);
+    }
+
+</script>
+
+{% endblock %}
