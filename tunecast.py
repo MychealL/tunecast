@@ -3,8 +3,14 @@ from flask import Flask, request, render_template, url_for
 import os
 
 music_dir = 'static/music'
-music_files = [f for f in os.listdir(music_dir) if f.endswith('mp3')]
-music_files_number = len(music_files)
+image_dir = 'static/images'
+current = 0
+key = 'sun'
+playlist = {}
+playlist[0] = [f for f in os.listdir('static/music/sun') if f.endswith('mp3')]
+playlist[1] = [f for f in os.listdir('static/music/rain') if f.endswith('mp3')]
+playlist[2] = [f for f in os.listdir('static/music/snow') if f.endswith('mp3')]
+
 
 app = Flask(__name__)
 
@@ -13,16 +19,17 @@ app = Flask(__name__)
 def home():
     return render_template('home.html',
                            title='home',
-                           music_files=music_files,
-                           music_files_number=music_files_number)
+                           playlist=playlist,
+                           current=current,
+                           key=key,
+                           image_dir=image_dir)
 
 
 @app.route("/list")
 def list():
     return render_template('list.html',
                            title='list',
-                           music_files_number=music_files_number,
-                           music_files=music_files)
+                           playlist=playlist)
 
 
 @app.route("/settings")
