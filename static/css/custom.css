@@ -1,7 +1,7 @@
 html, body
 {
-
-    background-color: #F5F5F5;
+    height: 100%;
+    background-image: linear-gradient(to top , #a4eeff, white);
 }
 
 .list-group-item.disabled, .list-group-item.disabled:focus, .list-group-item.disabled:hover{
@@ -23,9 +23,7 @@ ul
     font-family: Lato;
     src: url(../fonts/Lato/Lato-Regular.ttf);
 }
-
-
-
+  
 @font-face {
     font-family: Play;
     src: url(../fonts/Play/Play-Regular.ttf);
@@ -53,7 +51,7 @@ ul
 
 .logo-font{
     font-family: Audiowide;
-    font-size: 250%
+    font-size: 150%
 }
 
 
@@ -129,14 +127,14 @@ ul
 
 
 .navbar-color{
-    background-color: #1A2930;
-    border-color: #1A2930;
+ 
 }
 
 
 
 .navbar {
   border-bottom: 0px;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 .navbar-static-top {
@@ -152,7 +150,7 @@ ul
 }
 .navbar-default {
   background-color: #0;
-  border-color: #0;
+  border-color: #ffffff;
   color: white;
 }
 

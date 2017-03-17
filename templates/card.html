@@ -9,9 +9,10 @@
             {% for song in range(playlist[current]|length) %}
               <li class="list-group-item" style="text-align: left;"><a href="javascript:void(0);" onclick="playSong( '{{key}}/'+'{{ playlist[current][song] }}' )"> {{song+1}}) {{ playlist[current][song] }}</a></li>
             {% endfor %}
+            <li class="list-group-item">{% include 'play.html' %}</li>
         </ul>
       </div>
-      {% include 'play.html' %}
+      
 </div>
 
 <script type="text/javascript">
