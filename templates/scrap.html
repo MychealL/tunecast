@@ -1,0 +1,35 @@
+
+
+<div class="panel-group">
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a href=javascript:void(0);" onclick="playSong('{{music_files[0] }}')">Sunny</a>
+        </div>
+        <div class="panel-body">
+            {% include 'play.html' %}
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a href=javascript:void(0);" onclick="playSong('{{music_files[1] }}')">Rain</a>
+        </div>
+        <div class="panel-body">
+            {% include 'play.html' %}
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a href=javascript:void(0);" onclick="playSong('{{music_files[2] }}')">Snow</a>
+        </div>
+        <div class="panel-body">
+            {% include 'play.html' %}
+        </div>
+    </div>
+</div>
+
+<!--ul class="list-group col-md-4 text-center">
+{% for song in range(music_files_number) %}
+    <li class="list-group-item"><a href="javascript:void(0);" onclick="playSong( '{{music_files[song] }}' )"> {{song+1}} {{ music_files[song] }}</a></li>
+{% endfor %}
+    -->

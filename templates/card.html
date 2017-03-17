@@ -1,15 +1,15 @@
 {% block card %}
 
-<div class="card" style="width: 20rem;">
+<div class="card card-outline-primary mb-3">
   <img class="card-img-top rounded mx-auto d-block" style="width: 50%; height: 50%;" src={{image_dir}} alt="Card image cap">
-  <div class="card-block">
+  <div class="card-block card-img-overlay">
       <h4 class="card-title" > {{title}} </h4>
-  </div>
-    <ul class="list-group list-group-flush">
-        {% for song in range(playlist[current]|length) %}
+      <ul class="list-group list-group-flush " style="text-align: left;">
+          {% for song in range(playlist[current]|length) %}
             <li class="list-group-item"><a href="javascript:void(0);" onclick="playSong( '{{key}}/'+'{{ playlist[current][song] }}' )"> {{song+1}}) {{ playlist[current][song] }}</a></li>
-        {% endfor %}
-    </ul>
+          {% endfor %}
+      </ul>
+  </div>
     {% include 'play.html' %}
 </div>
 
