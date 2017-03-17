@@ -3,6 +3,29 @@
 
 {% block main %}
 
+<label for="Volume">Volume</label>
+
+<div class="item range">
+  <i class="icon ion-volume-low"></i>
+  <input type="range" name="volume">
+  <i class="icon ion-volume-high"></i>
+</div>
+
+<label for="Temperature Unit">Temperature Unit</label>
+
+<div align="left"><br>
+  <input type="radio" name="group1" value="Celcius" checked> Celcius<br>
+  <input type="radio" name="group1" value="fahrenheit"> fahrenheit
+</div>
+
+<label for="Spotify Login">Spotify Login</label>
+
+
+
+<!--<ion-list>
+  <ion-radio ng-model="choice" ng-value="'A'">Choose A</ion-radio>
+  <ion-radio ng-model="choice2" ng-value="'B'">Choose B</ion-radio>
+</ion-list>-->
 
 <nav class="navbar navbar-fixed-bottom navbar-inverse bg-primary">
     <div class="container text-center">
