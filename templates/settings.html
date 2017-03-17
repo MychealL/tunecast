@@ -3,6 +3,8 @@
 
 {% block main %}
 
+<ul class="list-group list-group-flush "> 
+<li class="list-group-item" style="text-align: left;">
 <label for="Volume">Volume</label>
 
 <div class="item range">
@@ -10,17 +12,21 @@
   <input type="range" name="volume">
   <i class="icon ion-volume-high"></i>
 </div>
+</li>
 
-<label for="Temperature Unit">Temperature Unit</label>
+<li class="list-group-item" style="text-align: left;">
+  <label for="Temperature Unit">Temperature Unit</label>
 
-<div align="left"><br>
-  <input type="radio" name="group1" value="Celcius" checked> Celcius<br>
-  <input type="radio" name="group1" value="fahrenheit"> fahrenheit
-</div>
+  <div align="left"><br>
+    <input type="radio" name="group1" value="Celcius" checked> Celcius<br>
+    <input type="radio" name="group1" value="fahrenheit"> fahrenheit
+  </div>
+</li>
 
-<img src="spotifylogo.png" alt="Spotify Logo" style="width:50px;height:50px;">
-
-
+<li class="list-group-item" style="text-align: left;">
+  <img src="http://www.carlsednaoui.com/images/posts/spotify-1.png"  style="width:30px;">
+  <button class="btn pull-right"><a href="/login">Login to Spotify</a>
+</li>
 
 
 <!--<ion-list>
