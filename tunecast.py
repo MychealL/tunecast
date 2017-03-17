@@ -54,7 +54,9 @@ def list():
 
 @app.route("/settings")
 def settings():
-    return render_template('settings.html', title='settings')
+    return render_template('settings.html',
+                           title='Settings',
+                           image_dir='static/images/spotify/spotifylogo.png')
 
 
 if __name__ == "__main__":
