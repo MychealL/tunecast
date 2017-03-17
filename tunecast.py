@@ -38,7 +38,7 @@ def home():
                            playlist=playlist,
                            current=0,
                            key=key,
-                           image_dir='static/images/sun/sun_tunecast.jpg')
+                           image_dir='https://image.flaticon.com/icons/svg/136/136723.svg')
 
 
 @app.route("/home_two")
@@ -51,7 +51,7 @@ def home_two():
                            current=1,
                            playlist=playlist,
                            key='rain',
-                           image_dir='static/images/rain/rain_tunecast.jpg')
+                           image_dir='https://getreferralmd.com/wp-content/uploads/2015/10/rain.png')
 
 
 @app.route("/home_three")
@@ -64,7 +64,7 @@ def home_three():
                            current=2,
                            playlist=playlist,
                            key='snow',
-                           image_dir='static/images/snow/snow_tunecast.jpg')
+                           image_dir='http://www.myiconfinder.com/uploads/iconsets/256-256-6bda2f56698d9f7d5f0255c12757b2f2-snow.png')
 
 
 @app.route("/list")
