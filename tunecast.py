@@ -82,7 +82,11 @@ def settings():
     global logged_in
     if not logged_in: 
        return redirect("/login", code=302)
-    return render_template('settings.html', title='settings')
+
+    return render_template('settings.html',
+                           title='Settings',
+                           image_dir='static/images/spotify/spotifylogo.png')
+
 
 
 if __name__ == "__main__":
