@@ -2,16 +2,28 @@
 
 
 {% block main %}
-<ul>
-{% for key in playlist %}
-    {% for song in range(playlist[key]|length) %}
-        <li class="list-group-item"><a href="javascript:void(0);" onclick="playSong( '{{key}}/'+'{{ playlist[key][song] }}' )"> {{song+1}} {{key}} {{ playlist[key][song] }}</a></li>
+<!--div class="container text-center">
+    <ul>
+    {% for key in playlist %}
+        {% for song in range(playlist[key]|length) %}
+            <li class="list-group-item" style="text-align: left;"><a href="javascript:void(0);"> {{ playlist[key][song] }}</a></li>
+        {% endfor %}
     {% endfor %}
-{% endfor %}
-</ul>
+    </ul>
+</div-->
+<div class="card col-sm-8">
+      <img class="img-responsive img-rounded "  src="http://cdn.mysitemyway.com/etc-mysitemyway/icons/legacy-previews/icons/glossy-black-icons-media/003371-glossy-black-icon-media-music-eighth-notes.png" style="width:100px; display: block; margin: 0 auto;" alt="card image cap">
+      <div class="card-block">
+      <h4 class="card-title text-center" > Music library </h4>
+        <ul class="list-group list-group-flush ">
+            {% for key in playlist %}
+                {% for song in range(playlist[key]|length) %}
+                  <li class="list-group-item" style="text-align: left;"><a href="javascript:void(0);"> {{ playlist[key][song] }}</a></li>
+                {% endfor %}
+            {% endfor %}
+        </ul>
+      </div>
 
-<div class="container">
-    {% include 'play.html' %}
 </div>
 
 <nav class="navbar navbar-fixed-bottom navbar-inverse bg-primary">
@@ -19,8 +31,8 @@
         <ul class="nav nav-pills" style="display: inline-block;">
             <li role="presentation">
                 <a href="/">
-                    <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
-                    Home
+                    <span class="glyphicon glyphicon-music" aria-hidden="true"></span>
+                    Play
                 </a>
             </li>
             <li role="presentation">
@@ -31,18 +43,12 @@
             </li>
             <li role="presentation" class="active">
                 <a href="/list">
-                    <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
-                    List
+                    <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+                    Favorites
                 </a>
             </li>
         </ul>
     </div>
 </nav>
 
-<script type="text/javascript">
-    function playSong(song){
-        $('audio').attr('src', '/static/music/'+song);
-    }
-
-</script>
 {% endblock %}
